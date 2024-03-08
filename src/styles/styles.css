@@ -4,13 +4,13 @@
 
 .linkHovered a {
     position: relative;
-    padding: 32px;
+    padding: 32px 32px 20px 32px;
 }
 
 .linkHovered a::after {
     content: '';
     position: absolute;
-    bottom: 16px;
+    bottom: 0;
     left: 50%;
     width: 0;
     height: 3.2px;
