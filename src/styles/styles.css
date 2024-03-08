@@ -1,0 +1,23 @@
+.css-spn4bz:hover {
+    text-decoration: none !important;
+}
+
+.linkHovered a {
+    position: relative;
+    padding: 32px;
+}
+
+.linkHovered a::after {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    width: 0;
+    height: 3.2px;
+    background: #ff8e3c;
+}
+
+.linkHovered a:hover::after {
+    width: 50%;
+    left: 25%;
+}
