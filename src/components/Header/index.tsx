@@ -9,10 +9,11 @@ import {
 import { User } from "@styled-icons/boxicons-regular/User";
 import { Cart } from "@styled-icons/ionicons-outline/Cart";
 import { Search } from "@styled-icons/evaicons-solid/Search";
+import NavLinks from "../NavLinks";
 
 export default function Header() {
   return (
-    <Box width={"100%"} margin={["22px 0", "45px 0", "45px 0", "45px 0", "45px 0"]}>
+    <Box background={"background"} position={"fixed"} width={"100%"} padding={["22px 0", "45px 0", "45px 0", "45px 0", "45px 0"]}>
         <Flex
           maxWidth={"1420px"}
           margin={"0 auto"}
@@ -33,10 +34,10 @@ export default function Header() {
               <InputLeftElement pointerEvents="none">
                 <Search width={"15px"} color={"gray"} />
               </InputLeftElement>
-              <Input placeholder="Pesquisar" borderRadius={"20px"} _focusVisible={{ zIndex: 1, borderColor: "1px solid black", boxShadow: "0 0 0 1px black" }} />
+              <Input placeholder="Pesquisar" borderRadius={"20px"} border={"1px solid #bfc0c1"} _hover={{ border: "1px solid #7f8285" }} _focusVisible={{ zIndex: 1, borderColor: "1px solid black", boxShadow: "0 0 0 1px black" }} />
             </InputGroup>
           </Box>
-          <Flex alignItems={"center"} gap={["10px", "24px", "24px", "24px", "24px"]}>
+          <Flex width={"160px"} justifyContent={"center"} alignItems={"center"} gap={["10px", "24px", "24px", "24px", "24px"]}>
             <Box width={"26px"}>
               <Cart />
             </Box>
@@ -50,9 +51,10 @@ export default function Header() {
               <InputLeftElement pointerEvents="none">
                 <Search width={"15px"} color={"gray"} />
               </InputLeftElement>
-              <Input placeholder="Pesquisar" borderRadius={"20px"} _focusVisible={{ zIndex: 1, borderColor: "1px solid black", boxShadow: "0 0 0 1px black" }} />
+              <Input placeholder="Pesquisar" borderRadius={"20px"} border={"1px solid #bfc0c1"} _hover={{ border: "1px solid #7f8285" }} _focusVisible={{ zIndex: 1, borderColor: "1px solid black", boxShadow: "0 0 0 1px black" }} />
             </InputGroup>
           </Box>
+          <NavLinks />
     </Box>
   );
 }
