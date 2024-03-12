@@ -46,30 +46,30 @@ export default function NavLinks() {
           handleMouseEnter={() => handleModelEnter()}
           handleMouseLeave={() => handleModelLeave()}
           href={"#"}
+          dropDown
         />
         <MenuOption
           children={"Elétricas"}
           handleMouseEnter={() => handleElectricsEnter()}
           handleMouseLeave={() => handleElectricsLeave()}
           href={"#"}
+          dropDown
         />
         <MenuOption
           children={"Acústicas"}
           handleMouseEnter={() => handleAcousticsEnter()}
           handleMouseLeave={() => handleAcousticsLeave()}
           href={"#"}
+          dropDown
         />
-
-        <Box className="linkHovered">
-          <Link as={NextLink} href={"#"}>
-            Sobre nós
-          </Link>
-        </Box>
-        <Box className="linkHovered">
-          <Link as={NextLink} href={"#"}>
-            Contato
-          </Link>
-        </Box>
+        <MenuOption
+          children={"Sobre nós"}
+          href={"#"}
+        />
+        <MenuOption
+          children={"Contato"}
+          href={"#"}
+        />
       </Flex>
       {isModelVisible && (
         <Box
