@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import { Flex, Box, Link, Heading } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MenuOption from "../MenuOption";
 
 export default function NavLinks() {
@@ -34,8 +34,15 @@ export default function NavLinks() {
     setAcousticsVisible(false);
   };
 
+  useEffect(() => {
+    if (isModelVisible || isElectricsVisible || isAcousticsVisible) {
+      document.body.classList.add("nav-open");
+    }
+     else document.body.classList.remove("nav-open");;
+  });
+
   return (
-    <Box>
+    <Box position={"relative"}>
       <Flex
         padding={"32px 0 20px 0"}
         alignItems={"center"}
@@ -47,32 +54,37 @@ export default function NavLinks() {
           handleMouseLeave={() => handleModelLeave()}
           href={"#"}
           dropDown
+          visible={isModelVisible}
         />
         <MenuOption
           children={"Elétricas"}
           handleMouseEnter={() => handleElectricsEnter()}
           handleMouseLeave={() => handleElectricsLeave()}
           href={"#"}
-          dropDown
-        />
+          dropDown 
+          visible={isElectricsVisible}        />
         <MenuOption
           children={"Acústicas"}
           handleMouseEnter={() => handleAcousticsEnter()}
           handleMouseLeave={() => handleAcousticsLeave()}
           href={"#"}
-          dropDown
-        />
+          dropDown 
+          visible={isAcousticsVisible}        />
         <MenuOption
           children={"Sobre nós"}
-          href={"#"}
-        />
+          href={"#"}       />
         <MenuOption
           children={"Contato"}
-          href={"#"}
-        />
+          href={"#"}       />
       </Flex>
       {isModelVisible && (
         <Box
+          background={"white"}
+          position={"absolute"}
+          left={"0"}
+          right={"0"}
+          bottom={"auto"}
+          zIndex={"1000"}
           onMouseEnter={handleModelEnter}
           onMouseLeave={handleModelLeave}
           boxShadow={"0 20px 30px 0 rgba(0, 0, 0, .3)"}
